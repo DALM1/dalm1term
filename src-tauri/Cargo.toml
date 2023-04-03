@@ -1,11 +1,11 @@
 [package]
 name = "dalm1term"
 version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "DALM1 TERM"
+authors = ["DALM1"]
 license = ""
-repository = ""
-edition = "2021"
+repository = "https://github.com/DALM1/dalm1term.git"
+edition = "2023"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
