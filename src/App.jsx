@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">        
         <p>
-          <code>src/App.jsx</code>
+          {/* <code>src/App.jsx</code> */}
         </p>                                          
       </header>
       <Terminal />
