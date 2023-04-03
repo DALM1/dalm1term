@@ -50,7 +50,7 @@ function Terminal() {
     <div className="terminal">
       <pre className="output">{output}</pre>
       <div className="input-container">
-        <span className="prompt">$</span>
+        {/* <span className="prompt">$</span> */}
         <input
           className="input"
           type="text"
