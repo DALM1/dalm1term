@@ -14,9 +14,7 @@ using:
   Rails: https://github.com/rails/rails/blob/master/MIT-LICENSE
 
 permissions:
-  - commercial-use
   - modifications
-  - distribution
   - private-use
 
 conditions:
