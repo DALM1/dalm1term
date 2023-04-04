@@ -1,13 +1,13 @@
 {
   "name": "dalm1term",
   "version": "0.0.0",
-  "description": "This template should help get you started developing with Tauri and React in Vite.",
+  "description": "DALM1TERM",
   "main": "tauri.js",
   "bin": {
     "dalm1term": "tauri.js"
   },
   "scripts": {
-    "dev": "node app.js", // changed from "vite"
+    "dev": "node app.js", 
     "build": "vite build",
     "preview": "vite preview",
     "tauri": "tauri"
