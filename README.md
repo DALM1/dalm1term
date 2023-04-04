@@ -18,7 +18,7 @@ Install the dependencies: npm install
 Usage:
 To use DALM1Term, follow these steps:
 
-Start the application: npm start / npm run dev
+Start the application: npm start / npm run dev / nodemon app.cjs / node app.cjs
 
 Open your web browser and go to http://localhost:3000
 Enter a command in the input field and "Execute"
