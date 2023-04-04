@@ -21,7 +21,7 @@ To use DALM1Term, follow these steps:
 Start the application: npm start / npm run dev
 
 Open your web browser and go to http://localhost:3000
-Enter a command in the input field and click "Execute"
+Enter a command in the input field and "Execute"
 
 The output of the command will be displayed in the output area below the input field.
 How It Works
