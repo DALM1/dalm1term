@@ -1,15 +1,19 @@
 {
   "name": "dalm1term",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
+  "version": "0.0.0",
+  "description": "This template should help get you started developing with Tauri and React in Vite.",
+  "main": "tauri.js",
+  "bin": {
+    "dalm1term": "app.jsx"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "tauri": "tauri",
-    "pkg": "pkg . --targets=node16-win-x64"
+    "tauri": "tauri"
   },
+  "author": "DALM1",
+  "license": "ISC",
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",
     "axios": "^1.3.4",
@@ -24,22 +28,6 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^3.0.0",
-    "pkg": "^5.6.0",
     "vite": "^4.0.0"
-  },
-  "description": "This template should help get you started developing with Tauri and React in Vite.",
-  "main": "tauri.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DALM1/dalm1term.git"
-  },
-  "author": "DALM1",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DALM1/dalm1term/issues"
-  },
-  "homepage": "https://github.com/DALM1/dalm1term#readme",
-  "pkg": {
-    "assets": "public/**/*"
   }
 }
