@@ -2,19 +2,18 @@
   "name": "dalm1term",
   "version": "0.0.0",
   "description": "DALM1TERM",
-  "main": "tauri.js",
+  "main": "app.cjs",
   "bin": {
     "dalm1term": "tauri.js"
   },
   "scripts": {
-    "dev": "node app.js", 
+    "dev": "nodemon app.cjs", 
     "build": "vite build",
     "preview": "vite preview",
     "tauri": "tauri"
   },
   "author": "DALM1",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",
     "axios": "^1.3.4",
