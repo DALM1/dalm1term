@@ -4,7 +4,7 @@
   "description": "This template should help get you started developing with Tauri and React in Vite.",
   "main": "tauri.js",
   "bin": {
-    "dalm1term": "app.jsx"
+    "dalm1term": "tauri.js"
   },
   "scripts": {
     "dev": "vite",
