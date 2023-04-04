@@ -7,7 +7,7 @@ const port = 3000;
 app.get('/execute', (req, res) => {
   const command = req.query.command;
 
-  exec(command, { shell: true }, (error, stdout, stderr) => {
+  exec(command, (error, stdout, stderr) => {
     if (error) {
       res.send(stderr);
     } else {
