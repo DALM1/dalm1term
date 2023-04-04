@@ -6,9 +6,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">        
-        {/* <p> */}
-          {/* <code>src/App.jsx</code> */}
-        {/* </p>                                           */}
       </header>
       <Terminal />
     </div>
