@@ -7,7 +7,7 @@
     "dalm1term": "tauri.js"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "node app.js", // changed from "vite"
     "build": "vite build",
     "preview": "vite preview",
     "tauri": "tauri"
