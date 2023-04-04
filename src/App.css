@@ -16,5 +16,6 @@ pre {
 }
 
 .App {
+  height: 80rem;
   background-color: black;
 }
