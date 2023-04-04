@@ -15,9 +15,11 @@ Install the dependencies: npm install
 Usage
 To use DALM1Term, follow these steps:
 
-Start the application: npm start
+Start the application: npm start / npm run dev
+
 Open your web browser and go to http://localhost:3000
 Enter a command in the input field and click "Execute"
+
 The output of the command will be displayed in the output area below the input field.
 How It Works
 DALM1Term uses Express.js to handle HTTP requests and responses. When a user submits a command, the application uses the exec() function from the Node.js child_process module to execute the command in the terminal. The output of the command is then sent back to the user in the HTTP response.
