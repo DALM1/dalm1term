@@ -16,6 +16,8 @@ pre {
 }
 
 .App {
+  display: flex;
+  justify-content: center;
   height: 80rem;
   background-color: black;
 }
