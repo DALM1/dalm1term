@@ -11,6 +11,7 @@ app.get('/execute', (req, res) => {
     if (error) {
       res.send(stderr);
     } else {
+      res.header("Access-Control-Allow-Origin", "http://127.0.0.1:3000");
       res.send(stdout);
     }
   });
