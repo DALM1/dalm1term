@@ -10,3 +10,11 @@
   height: 15rem;
   width: 30rem;
 }
+
+pre {
+  color: green;
+}
+
+.App {
+  background-color: black;
+}
