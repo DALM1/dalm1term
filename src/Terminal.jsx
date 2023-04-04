@@ -6,7 +6,7 @@ const Terminal = () => {
   const [response, setResponse] = useState('');
 
   const executeCommand = () => {
-    axios.get(`http://127.0.0.1:1420/execute?command=${command}`)
+    axios.get(`http://localhost:3000/execute?command=${command}`)
       .then(res => {
         setResponse(res.data);
       })
