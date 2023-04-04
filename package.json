@@ -7,7 +7,7 @@
     "dalm1term": "tauri.js"
   },
   "scripts": {
-    "dev": "nodemon app.cjs", 
+    "dev": "node app.cjs", 
     "build": "vite build",
     "preview": "vite preview",
     "tauri": "tauri"
