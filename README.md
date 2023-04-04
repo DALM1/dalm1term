@@ -10,9 +10,12 @@ Installation
 To install DALM1Term, follow these steps:
 
 Clone the repository from GitHub: git clone https://github.com/DALM1/dalm1term.git
+
 Change into the project directory: cd dalm1term
+
 Install the dependencies: npm install
-Usage
+
+Usage:
 To use DALM1Term, follow these steps:
 
 Start the application: npm start / npm run dev
