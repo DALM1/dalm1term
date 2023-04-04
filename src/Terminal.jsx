@@ -15,9 +15,15 @@ const Terminal = () => {
       });
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      executeCommand();
+    }
+  };
+
   return (
     <div>
-      <input type="text" value={command} onChange={e => setCommand(e.target.value)} />
+      <input type="text" value={command} onChange={e => setCommand(e.target.value)} onKeyDown={handleKeyDown} />
       <button onClick={executeCommand}>Execute</button>
       <pre>{response}</pre>
     </div>
