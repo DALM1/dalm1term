@@ -1,4 +1,4 @@
-DALM1Term
+DALM1Term (INDEV)
 Introduction
 DALM1Term is a simple web application that allows users to execute terminal commands from their web browser. The application is built using Node.js and Express.js.
 
