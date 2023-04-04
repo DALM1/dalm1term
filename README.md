@@ -9,7 +9,7 @@ To run DALM1Term, you need to have Node.js installed on your computer. You can d
 Installation
 To install DALM1Term, follow these steps:
 
-Clone the repository from GitHub: git clone https://github.com/<username>/dalm1term.git
+Clone the repository from GitHub: git clone https://github.com/DALM1/dalm1term.git
 Change into the project directory: cd dalm1term
 Install the dependencies: npm install
 Usage
