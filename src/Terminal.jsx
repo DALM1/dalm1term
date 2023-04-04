@@ -1,66 +1,37 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { initTauri } from '../tauri';
+import { useState } from 'react';
 
 function Terminal() {
   const [output, setOutput] = useState('');
-  const [input, setInput] = useState('');
-  const [commandHistory, setCommandHistory] = useState([]);
-  const [historyIndex, setHistoryIndex] = useState(-1);
-  const inputEl = useRef(null);
-
-  useEffect(() => {
-    initTauri((output) => {
-      setOutput((prevOutput) => prevOutput + output);
-      inputEl.current.focus();
-    });
-  }, []);
+  const [command, setCommand] = useState('');
 
   const handleInputChange = (event) => {
-    setInput(event.target.value);
+    setCommand(event.target.value);
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === 'ArrowUp') {
-      if (historyIndex === -1) {
-        setHistoryIndex(commandHistory.length - 1);
-        setInput(commandHistory[commandHistory.length - 1]);
-      } else if (historyIndex > 0) {
-        setHistoryIndex(historyIndex - 1);
-        setInput(commandHistory[historyIndex - 1]);
-      }
-    } else if (event.key === 'ArrowDown') {
-      if (historyIndex < commandHistory.length - 1) {
-        setHistoryIndex(historyIndex + 1);
-        setInput(commandHistory[historyIndex + 1]);
-      } else {
-        setHistoryIndex(-1);
-        setInput('');
-      }
-    } else if (event.key === 'Enter') {
-      if (input.trim()) {
-        setCommandHistory((prevHistory) => [...prevHistory, input]);
-        setHistoryIndex(-1);
-        setInput('');
-        initTauri(input + '\n');
+    if (event.key === 'Enter') {
+      if (command.trim()) {
+        setOutput(output + '$ ' + command + '\n');
+        setCommand('');
+        executeCommand(command);
       }
     }
   };
 
+  const executeCommand = async (command) => {
+    try {
+      const response = await fetch(`https://api.commandline.run/cmd/${encodeURIComponent(command)}`);
+      const text = await response.text();
+      setOutput(output + text + '\n');
+    } catch (error) {
+      setOutput(output + 'Error: ' + error.message + '\n');
+    }
+  };
+
   return (
-    <div className="terminal">
-      <pre className="output">{output}</pre>
-      <div className="input-container">
-        {/* <span className="prompt">$</span> */}
-        <input
-          className="input"
-          type="text"
-          value={input}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-          ref={inputEl}
-          autoFocus
-        />
-      </div>
+    <div>
+      <pre>{output}</pre>
+      <input type="text" value={command} onChange={handleInputChange} onKeyDown={handleKeyDown} autoFocus />
     </div>
   );
 }
