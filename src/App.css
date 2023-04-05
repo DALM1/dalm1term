@@ -25,3 +25,8 @@ pre {
   background-image: url(https://media2.giphy.com/media/l3fZQvAJ5nxAgycaQ/giphy.gif?cid=ecf05e47nuwb7lspyvkml0bmbi17p4oc4kn1owmp3p1ldhen&rid=giphy.gif&ct=g);
   background-size: cover;
 }
+
+input button {
+  display: flex;
+  justify-content: center;
+}

@@ -2,40 +2,33 @@ use std::process::Command;
 use std::env;
 use std::io;
 
+
+
 fn main() {
     loop {
-        // Affiche le prompt
         print!("> ");
         io::stdout().flush().unwrap();
 
-        // Lit l'entrée de l'utilisateur
         let mut input = String::new();
         io::stdin().read_line(&mut input).unwrap();
 
-        // Supprime les espaces au début et à la fin de l'entrée
         let input = input.trim();
 
-        // Vérifie si l'utilisateur a entré une commande
         if input.is_empty() {
             continue;
         }
 
-        // Sépare les arguments de la commande
         let mut parts = input.split_whitespace();
         let command = parts.next().unwrap();
         let args = parts;
 
-        // Exécute la commande appropriée
         match command {
             "cd" => {
-                // Vérifie si un argument a été fourni
                 if let Some(path) = args.next() {
-                    // Change le répertoire de travail actuel
                     if let Err(e) = env::set_current_dir(path) {
                         eprintln!("{}", e);
                     }
                 } else {
-                    // Affiche le répertoire de travail actuel
                     if let Ok(path) = env::current_dir() {
                         println!("{}", path.display());
                     } else {
@@ -44,9 +37,7 @@ fn main() {
                 }
             }
             "mkdir" => {
-                // Vérifie si un argument a été fourni
                 if let Some(path) = args.next() {
-                    // Crée un nouveau répertoire
                     let output = Command::new("mkdir")
                                      .arg(path)
                                      .output();
@@ -58,9 +49,7 @@ fn main() {
                 }
             }
             "rmdir" => {
-                // Vérifie si un argument a été fourni
                 if let Some(path) = args.next() {
-                    // Supprime un répertoire existant
                     let output = Command::new("rmdir")
                                      .arg(path)
                                      .output();
@@ -72,7 +61,6 @@ fn main() {
                 }
             }
             "dir" => {
-                // Affiche le contenu du répertoire actuel (pour Windows)
                 let output = Command::new("cmd")
                                  .args(&["/C", "dir"])
                                  .output();
@@ -94,7 +82,7 @@ fn main() {
                 }
             }
             "ls" => {
-                let dir = match args.get(0) {
+                let dir = match args.next() {
                     Some(dir) => Path::new(dir),
                     None => Path::new("."),
                 };
@@ -108,13 +96,13 @@ fn main() {
                     }
                 }
             }
-            "cd" => {
+            "pass" => {
                 if let Some(directory) = args.get(0) {
                     if let Err(e) = env::set_current_dir(&directory) {
-                        println!("cd: {}: {}", directory, e);
+                        println!("pass: {}: {}", directory, e);
                     }
                 } else {
-                    println!("cd: missing directory operand");
+                    println!("pass: missing directory operand");
                 }
             }
             "rmdir" => {
@@ -133,6 +121,7 @@ fn main() {
                     println!("rmdir: missing directory operand");
                 }
             }
+           
             _ => {
                 println!("{}: command not found", command);
             }
