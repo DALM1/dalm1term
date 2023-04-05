@@ -35,6 +35,31 @@ fn main() {
                     eprintln!("couldn't cd to {}: {}", display, e);
                 }
             },
+            "ls" => {
+                let output = Command::new("ls")
+                    .output()
+                    .expect("failed to execute process");
+                io::stdout().write_all(&output.stdout).unwrap();
+                io::stderr().write_all(&output.stderr).unwrap();
+            },
+            "mkdir" => {
+                let dir_name = args.peekable()
+                    .peek()
+                    .expect("no directory name specified");
+                let result = std::fs::create_dir(dir_name);
+                if let Err(e) = result {
+                    eprintln!("couldn't create directory {}: {}", dir_name, e);
+                }
+            },
+            "touch" => {
+                let file_name = args.peekable()
+                    .peek()
+                    .expect("no file name specified");
+                let result = std::fs::File::create(file_name);
+                if let Err(e) = result {
+                    eprintln!("couldn't create file {}: {}", file_name, e);
+                }
+            },
             command => {
                 let child = Command::new(command)
                     .args(args)
