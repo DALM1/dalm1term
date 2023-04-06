@@ -13,7 +13,9 @@ Clone the repository from GitHub: git clone https://github.com/DALM1/dalm1term.g
 
 Change into the project directory: cd dalm1term
 
-Install the dependencies: npm install
+Install the dependencies: npm install / pip install -r requirements.txt
+
+create keys.py in the engshell directory to define OPENAI_KEY
 
 Usage:
 To use DALM1Term, follow these steps:
