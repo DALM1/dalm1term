@@ -28,7 +28,20 @@ create keys.py in the engshell directory to define OPENAI_KEY
 Usage:
 To use DALM1Term, follow these steps:
 
-Start the application: npm start / npm run dev / nodemon app.cjs / node app.cjs
+Start the application:
+``` 
+npm start
+```
+```  
+npm run dev
+```
+```  
+nodemon app.cjs
+```
+```
+  node app.cjs
+```
+```
 ```
 python engshell.py 
 ```
