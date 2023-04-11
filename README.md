@@ -11,17 +11,27 @@ To install DALM1Term, follow these steps:
 
 Clone the repository from GitHub: git clone https://github.com/DALM1/dalm1term.git
 
-Change into the project directory: cd dalm1term
+Change into the project directory:
+``` 
+cd dalm1term
+```
 
-Install the dependencies: npm install / pip install -r requirements.txt
-
+Install the dependencies:
+``` 
+npm install
+```  
+```
+pip install -r requirements.txt
+```
 create keys.py in the engshell directory to define OPENAI_KEY
 
 Usage:
 To use DALM1Term, follow these steps:
 
 Start the application: npm start / npm run dev / nodemon app.cjs / node app.cjs
+```
 python engshell.py 
+```
 
 Open your web browser and go to http://localhost:3000
 Enter a command in the input field and "Execute"
