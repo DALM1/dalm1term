@@ -39,7 +39,7 @@ npm run dev
 nodemon app.cjs
 ```
 ```
-  node app.cjs
+node app.cjs
 ```
 python engshell.py 
 ```
